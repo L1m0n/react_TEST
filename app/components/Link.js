@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 
 const Link = ({active, children, onClick}) => {
-	if (active) {
+	if(active) {
 		return <span>{children}</span>
 	}
 
@@ -13,14 +13,14 @@ const Link = ({active, children, onClick}) => {
 			}}
 		>
 			{children}
-		</a>
+		</a>	
 	)
 }
 
-Link.PropTypes= {
-	active:PropTypes.bool.isRequired,
-	children:PropTypes.node.isRequired,
-	onClick:PropTypes.func.isRequired
+Link.propTypes = {
+	active: PropTypes.bool.isRequired,
+	onClick: PropTypes.func.isRequired,
+	children:PropTypes.node.isRequired
 }
 
 export default Link;
