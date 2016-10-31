@@ -1,34 +1,10 @@
+
 import React from 'react';
 import {render} from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import App from './components/App';
-import todoApp from './reducers/index';
+import Root from './containers/Root';
+import rootReducer  from './reducers/reducers';
 
-const defaultState = {
-	todos: [
-		{
-			text: 'Kill some one',
-			id: 0,
-			completed: false
-		},
-		{
-			text:'Complete todo',
-			id:1,
-			completed: false
-		}
-	]
-}
-
-
-let store = createStore(todoApp, defaultState);
-
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
 render(
-	<Provider store={store} >
-        <App />
-    </Provider>,
+	<Root />,
     document.getElementById('app')
 );
